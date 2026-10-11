@@ -1,0 +1,15 @@
+# Entorno de Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Modelo entrenado (se regenera con: python src/entrenar_modelo.py)
+modelos/*.joblib
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

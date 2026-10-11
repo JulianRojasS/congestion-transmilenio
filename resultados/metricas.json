@@ -1,0 +1,110 @@
+{
+  "division": {
+    "entrenamiento_dias": "1-23",
+    "prueba_dias": "24-30",
+    "filas_entrenamiento": 62928,
+    "filas_prueba": 19152
+  },
+  "umbrales_salidas_por_hora": {
+    "bajo_hasta": 253.0,
+    "medio_hasta": 603.0
+  },
+  "distribucion_clases": {
+    "entrenamiento": {
+      "bajo": 21065,
+      "medio": 20895,
+      "alto": 20968
+    },
+    "prueba": {
+      "bajo": 6458,
+      "medio": 6221,
+      "alto": 6473
+    }
+  },
+  "modelos": {
+    "Línea base (clase más frecuente)": {
+      "prueba": {
+        "exactitud": 0.3372,
+        "f1_macro": 0.1681
+      }
+    },
+    "Árbol explicativo (prof. 4)": {
+      "prueba": {
+        "exactitud": 0.6708,
+        "f1_macro": 0.6665
+      },
+      "hojas": 16
+    },
+    "Árbol de decisión (ajustado)": {
+      "prueba": {
+        "exactitud": 0.9114,
+        "f1_macro": 0.9109
+      },
+      "entrenamiento": {
+        "exactitud": 0.9385,
+        "f1_macro": 0.9383
+      },
+      "f1_validacion_cruzada": 0.9128,
+      "mejores_hiperparametros": {
+        "max_depth": null,
+        "min_samples_leaf": 5
+      },
+      "profundidad": 25,
+      "hojas": 3361
+    },
+    "Random Forest (200 árboles)": {
+      "prueba": {
+        "exactitud": 0.9156,
+        "f1_macro": 0.9153
+      }
+    }
+  },
+  "matriz_confusion": {
+    "etiquetas": [
+      "bajo",
+      "medio",
+      "alto"
+    ],
+    "valores": [
+      [
+        6052,
+        357,
+        49
+      ],
+      [
+        519,
+        5408,
+        294
+      ],
+      [
+        29,
+        449,
+        5995
+      ]
+    ]
+  },
+  "primera_division": {
+    "variable": "demanda_media",
+    "umbral": 470.93,
+    "entropia_conjunto": 1.585,
+    "entropia_maxima_3_clases": 1.585,
+    "entropia_izquierda": 1.3467,
+    "entropia_derecha": 1.3977,
+    "ejemplos_izquierda": 30222,
+    "ejemplos_derecha": 32706,
+    "ganancia_informacion_manual": 0.2118,
+    "ganancia_informacion_sklearn": 0.2118
+  },
+  "importancia_variables": {
+    "demanda_media": 0.4101,
+    "hora": 0.2765,
+    "dia_semana": 0.1002,
+    "num_accesos": 0.039,
+    "zona_Zona G NQS Sur": 0.0334,
+    "tipo_dia": 0.0277,
+    "zona_Zona H Caracas Sur": 0.017,
+    "zona_Zona E NQS Central": 0.0142,
+    "zona_Zona F Av. Américas": 0.011,
+    "zona_Zona D Calle 80": 0.0103
+  }
+}

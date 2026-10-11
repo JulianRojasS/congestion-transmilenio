@@ -1,0 +1,69 @@
+ÁRBOL EXPLICATIVO (profundidad 4) - estructura
+
+|--- demanda_media <= 470.9
+|   |--- demanda_media <= 238.8
+|   |   |--- demanda_media <= 182.5
+|   |   |   |--- hora <= 16.5
+|   |   |   |   |--- class: bajo
+|   |   |   |--- hora >  16.5
+|   |   |   |   |--- class: bajo
+|   |   |--- demanda_media >  182.5
+|   |   |   |--- tipo_dia <= 1.5
+|   |   |   |   |--- class: bajo
+|   |   |   |--- tipo_dia >  1.5
+|   |   |   |   |--- class: bajo
+|   |--- demanda_media >  238.8
+|   |   |--- tipo_dia <= 1.5
+|   |   |   |--- hora <= 19.5
+|   |   |   |   |--- class: medio
+|   |   |   |--- hora >  19.5
+|   |   |   |   |--- class: bajo
+|   |   |--- tipo_dia >  1.5
+|   |   |   |--- demanda_media <= 371.2
+|   |   |   |   |--- class: bajo
+|   |   |   |--- demanda_media >  371.2
+|   |   |   |   |--- class: bajo
+|--- demanda_media >  470.9
+|   |--- demanda_media <= 1119.7
+|   |   |--- hora <= 19.5
+|   |   |   |--- tipo_dia <= 1.5
+|   |   |   |   |--- class: alto
+|   |   |   |--- tipo_dia >  1.5
+|   |   |   |   |--- class: medio
+|   |   |--- hora >  19.5
+|   |   |   |--- zona_Zona G NQS Sur <= 0.5
+|   |   |   |   |--- class: bajo
+|   |   |   |--- zona_Zona G NQS Sur >  0.5
+|   |   |   |   |--- class: medio
+|   |--- demanda_media >  1119.7
+|   |   |--- num_accesos <= 7.0
+|   |   |   |--- hora <= 19.5
+|   |   |   |   |--- class: alto
+|   |   |   |--- hora >  19.5
+|   |   |   |   |--- class: medio
+|   |   |--- num_accesos >  7.0
+|   |   |   |--- hora <= 5.5
+|   |   |   |   |--- class: medio
+|   |   |   |--- hora >  5.5
+|   |   |   |   |--- class: alto
+
+
+REGLAS SI-ENTONCES EXTRAÍDAS DEL ÁRBOL
+(soporte = % de ejemplos de entrenamiento que cumplen la regla; confianza = % de esos ejemplos que tienen la clase indicada)
+
+R01: SI demanda_media <= 182.5 Y hora <= 16.5 ENTONCES congestión = BAJO   (soporte 5.7%, confianza 96.3%)
+R02: SI demanda_media <= 182.5 Y hora > 16.5 ENTONCES congestión = BAJO   (soporte 2.9%, confianza 81.4%)
+R03: SI 182.5 < demanda_media <= 238.8 Y tipo_dia <= 1.5 ENTONCES congestión = BAJO   (soporte 5.7%, confianza 72.2%)
+R04: SI 182.5 < demanda_media <= 238.8 Y tipo_dia > 1.5 ENTONCES congestión = BAJO   (soporte 0.9%, confianza 100.0%)
+R05: SI 238.8 < demanda_media <= 470.9 Y tipo_dia <= 1.5 Y hora <= 19.5 ENTONCES congestión = MEDIO   (soporte 23.8%, confianza 55.4%)
+R06: SI 238.8 < demanda_media <= 470.9 Y tipo_dia <= 1.5 Y hora > 19.5 ENTONCES congestión = BAJO   (soporte 4.8%, confianza 78.2%)
+R07: SI 238.8 < demanda_media <= 371.2 Y tipo_dia > 1.5 ENTONCES congestión = BAJO   (soporte 2.2%, confianza 96.2%)
+R08: SI 371.2 < demanda_media <= 470.9 Y tipo_dia > 1.5 ENTONCES congestión = BAJO   (soporte 2.1%, confianza 78.3%)
+R09: SI 470.9 < demanda_media <= 1119.7 Y hora <= 19.5 Y tipo_dia <= 1.5 ENTONCES congestión = ALTO   (soporte 27.2%, confianza 56.1%)
+R10: SI 470.9 < demanda_media <= 1119.7 Y hora <= 19.5 Y tipo_dia > 1.5 ENTONCES congestión = MEDIO   (soporte 4.1%, confianza 47.6%)
+R11: SI 470.9 < demanda_media <= 1119.7 Y hora > 19.5 Y zona_Zona G NQS Sur <= 0.5 ENTONCES congestión = BAJO   (soporte 5.6%, confianza 60.6%)
+R12: SI 470.9 < demanda_media <= 1119.7 Y hora > 19.5 Y zona_Zona G NQS Sur > 0.5 ENTONCES congestión = MEDIO   (soporte 0.7%, confianza 52.4%)
+R13: SI demanda_media > 1119.7 Y num_accesos <= 7.0 Y hora <= 19.5 ENTONCES congestión = ALTO   (soporte 6.0%, confianza 80.9%)
+R14: SI demanda_media > 1119.7 Y num_accesos <= 7.0 Y hora > 19.5 ENTONCES congestión = MEDIO   (soporte 1.2%, confianza 37.0%)
+R15: SI demanda_media > 1119.7 Y num_accesos > 7.0 Y hora <= 5.5 ENTONCES congestión = MEDIO   (soporte 0.4%, confianza 42.7%)
+R16: SI demanda_media > 1119.7 Y num_accesos > 7.0 Y hora > 5.5 ENTONCES congestión = ALTO   (soporte 6.8%, confianza 98.6%)

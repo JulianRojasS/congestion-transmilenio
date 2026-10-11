@@ -1,0 +1,23 @@
+{
+  "archivo_original": "salidas_troncal_abril_2024.csv",
+  "filas_originales": 96455,
+  "filas_vacias_eliminadas": 44731,
+  "filas_limpias": 50835,
+  "zonas_troncales": 13,
+  "estaciones": 152,
+  "accesos": 413,
+  "intervalos_15min": 89,
+  "salidas_totales_mes": 60962639,
+  "filas_dataset_por_hora": 82080,
+  "salidas_en_horas_modeladas": 60195916,
+  "salidas_por_hora": {
+    "count": 82080.0,
+    "mean": 733.4,
+    "std": 1094.7,
+    "min": 0.0,
+    "25%": 192.0,
+    "50%": 397.0,
+    "75%": 787.0,
+    "max": 18625.0
+  }
+}
